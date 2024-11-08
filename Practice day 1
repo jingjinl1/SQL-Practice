@@ -1,0 +1,11 @@
+1. Display the fist, last names and emails of all customers, sort first name by ascending order and last name by descending order
+
+SELECT
+   FirstName AS 'Customer First Name',
+   LastName AS 'Customer Last Name',
+   Email
+FROM
+   Customer
+ORDER BY
+   FirstName ASC,
+   LastName DESC
