@@ -1,4 +1,8 @@
-1. Display the fist, last names and emails of all customers, sort first name by ascending order and last name by descending order
+/*
+Created by: JJ
+Created Date: 08/11/2024
+Description: Display the fist, last names and emails of all customers; sort first name by ascending order and last name by descending order; limited to top 10 rows.
+*/
 
 SELECT
    FirstName AS 'Customer First Name',
@@ -9,3 +13,60 @@ FROM
 ORDER BY
    FirstName ASC,
    LastName DESC
+LIMIT 10;
+
+
+/*
+Code Challenge: Concise track pricing report
+Dissplay Track Name and Price, sort by track name, limit to 20 rows.
+*/
+
+SELECT 
+   t.Name AS "Track Name",
+   t.UnitPrice AS Price
+FROM 
+   Track AS t
+ORDER BY
+   t.Name
+LIMIT 20;
+
+/*
+Notes for Operator types that uses with WHERE:
+Arithmetic:
+   Add          +
+   Subtract     -
+   Multiply     *
+   Divide       /
+   Modulo       %
+
+Comparison:
+Equal to              =
+Not Equal to          <>
+Greater than          >
+Less than             <
+Greater or Equal to   >=
+Less or Equal to      <=
+
+Logical:
+AND
+OR
+IN
+LIKE
+BETWEEN
+*/
+
+
+/*
+Description: Display record that customers have purchased 2 songs at 0.99 each
+*/
+SELECT 
+   InvoiceDate,
+   BillingAddress,
+   BillingCity
+FROM
+   Invoice
+WHERE 
+    Total = 1.98;
+   
+
+
