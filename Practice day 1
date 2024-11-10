@@ -66,7 +66,38 @@ SELECT
 FROM
    Invoice
 WHERE 
-    Total = 1.98;
-   
+    Total = 1.98
+ORDER BY
+    InvoiceDate;
+
+
+/*
+Description: Display all the invoices that are between 1.98 and 5.
+*/
+SELECT 
+   InvoiceDate,
+   BillingAddress,
+   BillingCity
+FROM
+   Invoice
+WHERE 
+    Total BETWEEN 1.98 AND 5.00
+ORDER BY
+    InvoiceDate;
+
+
+/*
+Description: Display all the invoices that are equal to 1.98 or 3.96.
+*/
+SELECT 
+   InvoiceDate,
+   BillingAddress,
+   BillingCity
+FROM
+   Invoice
+WHERE 
+    Total IN (1.98, 3.96)
+ORDER BY
+    InvoiceDate;   
 
 
