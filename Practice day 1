@@ -104,6 +104,14 @@ ORDER BY
 /*
 Description: How many invoices were billed to the city of Brussels?
 */
-
-
+SELECT 
+   InvoiceDate,
+   BillingAddress,
+   BillingCity
+FROM
+   Invoice
+WHERE 
+    BillingCity = 'Brussels'
+ORDER BY
+    InvoiceDate; 
 
