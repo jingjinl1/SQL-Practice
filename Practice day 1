@@ -101,3 +101,9 @@ ORDER BY
     InvoiceDate;   
 
 
+/*
+Description: How many invoices were billed to the city of Brussels?
+*/
+
+
+
