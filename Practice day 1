@@ -62,7 +62,8 @@ Description: Display record that customers have purchased 2 songs at 0.99 each
 SELECT 
    InvoiceDate,
    BillingAddress,
-   BillingCity
+   BillingCity,
+   Total
 FROM
    Invoice
 WHERE 
@@ -77,7 +78,8 @@ Description: Display all the invoices that are between 1.98 and 5.
 SELECT 
    InvoiceDate,
    BillingAddress,
-   BillingCity
+   BillingCity,
+   Total
 FROM
    Invoice
 WHERE 
@@ -92,7 +94,8 @@ Description: Display all the invoices that are equal to 1.98 or 3.96.
 SELECT 
    InvoiceDate,
    BillingAddress,
-   BillingCity
+   BillingCity,
+   Total
 FROM
    Invoice
 WHERE 
@@ -107,7 +110,8 @@ Description: How many invoices were billed to the city of Brussels, Orlando, or 
 SELECT 
    InvoiceDate,
    BillingAddress,
-   BillingCity
+   BillingCity,
+   Total
 FROM
    Invoice
 WHERE 
@@ -123,7 +127,8 @@ Knowledge: the wild card symbol in SQL is %
 SELECT 
    InvoiceDate,
    BillingAddress,
-   BillingCity
+   BillingCity,
+   Total
 FROM
    Invoice
 WHERE 
