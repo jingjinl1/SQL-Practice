@@ -9,5 +9,30 @@ FROM
     Invoice
 WHERE
     InvoiceDate = '2010-05-22 00:00:00'
+/* the where clause is also equivalent to:
+WHERE
+    DATE(InvoiceDate) = '2010-05-22'
+*/
 ORDER BY
-    InvoiceDate
+    InvoiceDate;
+
+
+/*
+Description: Get all invoices billed after 2010-05-22 and have a total of less than 3.00
+*/
+SELECT
+    InvoiceDate,
+    BillingAddress,
+    BillingCity
+    Total
+FROM
+    Invoice
+WHERE
+    DATE(InvoiceDate) > '2010-05-22' AND Total < 3.00
+ORDER BY
+    InvoiceDate;
+
+
+/*
+Description: Get all invoices billed after 2010-05-22 and have a total of less than 3.00
+*/
