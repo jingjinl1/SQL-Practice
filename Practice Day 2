@@ -94,3 +94,23 @@ WHERE
     PurchaseType = 'Top Performer'
 ORDER BY
     InvoiceDate;
+
+
+/*
+Code challenge: Categorize tracks by price
+*/
+SELECT 
+   t.Name AS "Track Name",
+   t.Composer,
+   t.UnitPrice AS Price,
+   
+   CASE
+   WHEN t.UnitPrice < 1.00 THEN 'Budget'
+   WHEN t.UnitPrice BETWEEN 1.00 AND 1.49 THEN 'Regular'
+   WHEN t.UnitPrice BETWEEN 1.50 AND 1.99 THEN 'Premium'
+   ELSE 'Exclusive'
+   END AS PriceCategory
+
+FROM Track AS t
+ORDER BY
+   t.UnitPrice ASC;
