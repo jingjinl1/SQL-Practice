@@ -1,0 +1,13 @@
+/* 
+Created by: Jingjin
+Created Date: 12/11/2024
+Description: JOINS
+*/
+SELECT 
+   *
+From 
+   Invoice
+INNER JOIN 
+   Customer 
+ON 
+   Invoice.CustomerId = Customer.CustomerId
