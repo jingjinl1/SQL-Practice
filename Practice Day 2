@@ -34,5 +34,21 @@ ORDER BY
 
 
 /*
-Description: Get all invoices billed after 2010-05-22 and have a total of less than 3.00
+Description: Get all invoices billed to the city starting with P or starts with D
+*/
+SELECT
+    InvoiceDate,
+    BillingAddress,
+    BillingCity
+    Total
+FROM
+    Invoice
+WHERE
+    BillingCity LIKE 'P%' OR BillingCity LIKE 'D%'
+ORDER BY
+    InvoiceDate;
+
+
+/*
+Description: Get all invoices that are greater than 1.98 from any cities that names start with P or D
 */
