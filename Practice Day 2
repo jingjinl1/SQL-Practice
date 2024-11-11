@@ -67,6 +67,7 @@ ORDER BY
 
 
 /*
+Introducing the CASE END
 WSDA Music Sales Goal: They want as many customers as possible to spend between $7.00 and $15.00
 
 Sales Categories:
@@ -79,7 +80,14 @@ SELECT
     InvoiceDate,
     BillingAddress,
     BillingCity,
-    Total
+    Total,
+
+    CASE
+    WHEN Total < 2.00 THEN 'Baseline Purchase'
+    WHEN Total BETWEEN 2.00 AND 6.99 THEN 'Low Purchase'
+    WHEN Total BETWEEN 7.00 AND 15.00 THEN 'Target Purchase'
+    ELSE 'Top Performer'
+    END AS PurchaseType
 FROM
     Invoice
 ORDER BY
