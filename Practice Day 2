@@ -90,5 +90,7 @@ SELECT
     END AS PurchaseType
 FROM
     Invoice
+WHERE 
+    PurchaseType = 'Top Performer'
 ORDER BY
     InvoiceDate;
