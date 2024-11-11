@@ -102,7 +102,7 @@ ORDER BY
 
 
 /*
-Description: How many invoices were billed to the city of Brussels?
+Description: How many invoices were billed to the city of Brussels, Orlando, or Paris
 */
 SELECT 
    InvoiceDate,
@@ -111,7 +111,23 @@ SELECT
 FROM
    Invoice
 WHERE 
-    BillingCity = 'Brussels'
+    BillingCity IN ('Brussels', 'Orlando', 'Paris')
 ORDER BY
     InvoiceDate; 
+
+
+/*
+Description: how many invoices were billed to the city that starts at B
+Knowledge: the wild card symbol in SQL is %
+*/
+SELECT 
+   InvoiceDate,
+   BillingAddress,
+   BillingCity
+FROM
+   Invoice
+WHERE 
+    BillingCity LIKE 'B%'
+ORDER BY
+    InvoiceDate;
 
