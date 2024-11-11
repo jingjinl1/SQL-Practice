@@ -5,6 +5,7 @@ SELECT
     InvoiceDate,
     BillingAddress,
     BillingCity
+    Total
 FROM
     Invoice
 WHERE
@@ -50,5 +51,36 @@ ORDER BY
 
 
 /*
-Description: Get all invoices that are greater than 1.98 from any cities that names start with P or D
+Description: Get all invoices that are greater than 1.98 from any cities whose names start with P or D
 */
+SELECT
+    InvoiceDate,
+    BillingAddress,
+    BillingCity
+    Total
+FROM
+    Invoice
+WHERE
+    Total > 1.98 AND (BillingCity LIKE 'P%' OR BillingCity LIKE 'D%')
+ORDER BY
+    InvoiceDate;
+
+
+/*
+WSDA Music Sales Goal: They want as many customers as possible to spend between $7.00 and $15.00
+
+Sales Categories:
+Baseline Purchase -  Between $0.99 and $1.99
+Low Purchase - Between $2.00 and $6.99
+Target Purchase - Between $7.00 and $15.00
+Top Performer - Above $15.00
+*/
+SELECT
+    InvoiceDate,
+    BillingAddress,
+    BillingCity
+    Total
+FROM
+    Invoice
+ORDER BY
+    InvoiceDate;
