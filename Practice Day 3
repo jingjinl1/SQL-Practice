@@ -33,3 +33,9 @@ ON
     i.CustomerId = c.CustomerId
  ORDER BY
     c.CustomerId
+
+
+/*
+Different types of join:
+INNER JOIN: only display the overlapping records between tables.
+*/
