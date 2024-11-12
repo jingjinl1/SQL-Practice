@@ -11,3 +11,25 @@ INNER JOIN
    Customer 
 ON 
    Invoice.CustomerId = Customer.CustomerId
+
+
+ /*
+ Uses alias in joined tabe, select relevant feild
+ Description: display all the cutomers and the invoices that was genearted for them
+ Join customer and invoice table, display customers first, last name, invoice id, invoice date and total
+ */
+ SELECT
+    i.CustomerId,
+    c.FirstName,
+    c.LastName,
+    i.InvoiceId,
+    i.InvoiceDate,
+    i.Total
+ FROM
+    Invoice AS i
+ INNER JOIN
+    Customer AS c
+ ON
+    i.CustomerId = c.CustomerId
+ ORDER BY
+    c.CustomerId
