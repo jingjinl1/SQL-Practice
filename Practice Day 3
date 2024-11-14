@@ -38,4 +38,28 @@ ON
 /*
 Different types of join:
 INNER JOIN: only display the overlapping records between tables.
+LEFT OUTER JOIN: Display all the records from the left table and only the matching records from the right table, unmatching ones will be NULL.
+RIGHT OUTER JOIN: Display all the records from the right table and only the matching records from the left table, unmatching ones will be NULL.
 */
+
+/*
+Description: What employees are responsible for the 10 highest individual sales?
+*/
+SELECT
+   e.EmployeeId,
+   e.FirstName AS "Employee FirstName",
+   e.LastName AS "Employee LastName",
+   i.InvoiceId,
+   i.CustomerId,
+   c.FirstName AS "Customer FirstName",
+   c.LastName AS "Customer LastName",
+   c.SupportRepId,
+   i.InvoiceDate,
+   i.total
+FROM Invoice AS i
+LEFT OUTER JOIN Customer AS c
+ON i.CustomerId = c.CustomerId
+LEFT OUTER JOIN Employee AS e
+ON c.SupportRepId = e.EmployeeId
+ORDER BY i.total DESC
+LIMIT 10;
