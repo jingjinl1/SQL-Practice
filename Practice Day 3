@@ -63,3 +63,17 @@ LEFT OUTER JOIN Employee AS e
 ON c.SupportRepId = e.EmployeeId
 ORDER BY i.total DESC
 LIMIT 10;
+
+/*
+Code Challenge
+*/
+SELECT 
+   c.FirstName AS CustomerFirstName,
+   c.LastName AS CustomerLastName,
+   e.FirstName AS SupportRepFirstName,
+   e.LastName AS SupportRepLastName
+FROM Customer AS c
+LEFT OUTER JOIN Employee AS e
+ON c.SupportRepId = e.EmployeeId
+ORDER BY 
+   c.FirstName
