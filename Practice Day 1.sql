@@ -3,7 +3,6 @@ Created by: JJ
 Created Date: 08/11/2024
 Description: Display the fist, last names and emails of all customers; sort first name by ascending order and last name by descending order; limited to top 10 rows.
 */
-
 SELECT
    FirstName AS 'Customer First Name',
    LastName AS 'Customer Last Name',
@@ -20,7 +19,6 @@ LIMIT 10;
 Code Challenge: Concise track pricing report
 Dissplay Track Name and Price, sort by track name, limit to 20 rows.
 */
-
 SELECT 
    t.Name AS "Track Name",
    t.UnitPrice AS Price
@@ -38,23 +36,22 @@ Arithmetic:
    Multiply     *
    Divide       /
    Modulo       %
-
+   
 Comparison:
-Equal to              =
-Not Equal to          <>
-Greater than          >
-Less than             <
-Greater or Equal to   >=
-Less or Equal to      <=
+   Equal to              =
+   Not Equal to          <>
+   Greater than          >
+   Less than             <
+   Greater or Equal to   >=
+   Less or Equal to      <=
 
 Logical:
-AND
-OR
-IN
-LIKE
-BETWEEN
+   AND
+   OR
+   IN
+   LIKE
+   BETWEEN
 */
-
 
 /*
 Description: Display record that customers have purchased 2 songs at 0.99 each
@@ -135,4 +132,3 @@ WHERE
     BillingCity LIKE 'B%'
 ORDER BY
     InvoiceDate;
-

@@ -1,3 +1,47 @@
+/* 
+Created by: Jingjin
+Created Date: 12/11/2024
+Description: JOINS
+*/
+SELECT 
+   *
+From 
+   Invoice
+INNER JOIN 
+   Customer 
+ON 
+   Invoice.CustomerId = Customer.CustomerId
+
+
+ /*
+ Uses alias in joined tabe, select relevant feild
+ Description: display all the cutomers and the invoices that was genearted for them
+ Join customer and invoice table, display customers first, last name, invoice id, invoice date and total
+ */
+ SELECT
+    i.CustomerId,
+    c.FirstName,
+    c.LastName,
+    i.InvoiceId,
+    i.InvoiceDate,
+    i.Total
+ FROM
+    Invoice AS i
+ INNER JOIN
+    Customer AS c
+ ON
+    i.CustomerId = c.CustomerId
+ ORDER BY
+    c.CustomerId
+	
+	
+/*
+Different types of join:
+INNER JOIN: only display the overlapping records between tables.
+LEFT OUTER JOIN: Display all the records from the left table and only the matching records from the right table, unmatching ones will be NULL.
+RIGHT OUTER JOIN: Display all the records from the right table and only the matching records from the left table, unmatching ones will be NULL.
+*/
+
 /*
 Description: What employees are responsible for the 10 highest individual sales?
 */
