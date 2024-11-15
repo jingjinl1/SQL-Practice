@@ -83,7 +83,11 @@ ORDER BY
 /*
 Types of functions:
    Aggregate: MIN(), MAX(), AUG(), COUNT(), SUM()
-   String: UPPER(), SUBSTR(), INSTR(), LENGTH(), LTRIM(), REPLACE(), TRIM()
+   String: UPPER(): Display the field specified in the bracket in upper case
+           LOWER(): Display the field specified in the bracket in lower case
+		   SUBSTR(Field,n,m): Display the field from n position to m position 
+		   LENGTH(): Count the length of the feild
+		   INSTR(), LTRIM(), REPLACE(), TRIM()
    Date: NOW, DATETIME(), DATE(), JULIANDAY(), STRFTIME(), TIME()
 */
 
@@ -98,7 +102,9 @@ SELECT
    c.Address,
    c.FirstName || ' ' || c.LastName || ' ' || c.Address || ',' || c.City || ' ' || c.State || ' ' || c.PostalCode AS MailingAddress,
    LENGTH(c.PostalCode) AS PostalCode,
-   SUBSTR(c.PostalCode,1,5) AS '5 Digit PostalCode'
+   SUBSTR(c.PostalCode,1,5) AS '5 Digit PostalCode',
+   UPPER(c.FirstName) AS 'FirstName Upper Case',
+   LOWER(c.LastName) AS 'LastName Lower Case'
 FROM
    Customer AS c
 
