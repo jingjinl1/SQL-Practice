@@ -77,3 +77,28 @@ LEFT OUTER JOIN Employee AS e
 ON c.SupportRepId = e.EmployeeId
 ORDER BY 
    c.FirstName
+
+
+
+/*
+Types of functions:
+   Aggregate: MIN(), MAX(), AUG(), COUNT(), SUM()
+   String: UPPER(), SUBSTR(), INSTR(), LENGTH(), LTRIM(), REPLACE(), TRIM()
+   Date: NOW, DATETIME(), DATE(), JULIANDAY(), STRFTIME(), TIME()
+*/
+
+/*
+Concatenate
+DESCRIPTION: CREATE A MAILING LIST FOR ALL CUSTOMERS
+*/
+SELECT
+   c.CustomerId,
+   c.FirstName,
+   c.LastName,
+   c.Address,
+   c.FirstName || ' ' || c.LastName || ' ' || c.Address || ',' || c.City || ' ' || c.State || ' ' || c.PostalCode AS MailingAddress,
+   LENGTH(c.PostalCode) AS PostalCode,
+   SUBSTR(c.PostalCode,1,5) AS '5 Digit PostalCode'
+FROM
+   Customer AS c
+
