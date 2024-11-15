@@ -10,7 +10,7 @@ From
 INNER JOIN 
    Customer 
 ON 
-   Invoice.CustomerId = Customer.CustomerId
+   Invoice.CustomerId = Customer.CustomerId;
 
 
  /*
@@ -32,7 +32,7 @@ ON
  ON
     i.CustomerId = c.CustomerId
  ORDER BY
-    c.CustomerId
+    c.CustomerId;
 	
 	
 /*
@@ -109,13 +109,13 @@ SELECT
    c.FirstName,
    c.LastName,
    c.Address,
-   c.FirstName || ' ' || c.LastName || ' ' || c.Address || ',' || c.City || ' ' || c.State || ' ' || c.PostalCode AS MailingAddress,
+   c.FirstName||' '||c.LastName||' '||c.Address||','||c.City||' '||c.State||' '||c.PostalCode AS MailingAddress,
    LENGTH(c.PostalCode) AS PostalCode,
    SUBSTR(c.PostalCode,1,5) AS '5 Digit PostalCode',
    UPPER(c.FirstName) AS 'FirstName Upper Case',
    LOWER(c.LastName) AS 'LastName Lower Case'
 FROM
-   Customer AS c
+   Customer AS c;
    
    
 /*
@@ -129,4 +129,29 @@ SELECT
    STRFTIME('%Y-%m-%d',e.BirthDate) AS 'FormatedBirthDate(Y-m-d)',
    STRFTIME('%Y-%m-%d','NOW') - STRFTIME('%Y-%m-%d',e.BirthDate) AS Age
 FROM 
-   Employee AS e
+   Employee AS e;
+   
+ 
+ /*
+ Description: Aggregate functions | What are our all time global sales
+ Nesting Function: A function contained within another function
+    ROUND(Function, num): round the return of the Function into num decimals
+ */
+SELECT
+    SUM(i.total) AS 'Total Sales',
+	AVG(i.total) AS 'Average Sales',
+	ROUND(AVG(i.total),2) AS 'Average Sales Rounded',
+	MAX(i.total) AS 'Maximum Sale',
+	MIN(i.total) AS 'Minimum Sales',
+	COUNT(*) AS 'Sales Acount'
+FROM 
+    Invoice AS i;
+	
+/*
+Code Challenge:	
+Selects custoers full name and trasnform their postal code into a standardized 5 digit format
+*/
+SELECT 
+   c.FirstName||' '||c.LastName AS CustomerFullName,
+   SUBSTR(c.PostalCode,1,5) AS StandardizedPostalCode
+FROM Customer as c;
