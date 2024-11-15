@@ -91,7 +91,7 @@ Types of functions:
    String: 
       UPPER(): Display the field specified in the bracket in upper case
       LOWER(): Display the field specified in the bracket in lower case
-      SUBSTR(Field,n,m): Display the field from n position to m position 
+      SUBSTR(Field,n,m): Display the field from n position and have m digits
 	  LENGTH(): Count the length of the feild
 	  INSTR(), LTRIM(), REPLACE(), TRIM()
    Date: 
