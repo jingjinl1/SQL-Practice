@@ -87,7 +87,7 @@ LIMIT 10;
 
 /*
 Types of functions:
-   Aggregate: MIN(), MAX(), AUG(), COUNT(), SUM()
+   Aggregate: MIN(), MAX(), AVG(), COUNT(), SUM(), ROUND()
    String: 
       UPPER(): Display the field specified in the bracket in upper case
       LOWER(): Display the field specified in the bracket in lower case
