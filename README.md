@@ -10,6 +10,8 @@
 This repository contains practice exercises from the course:
 **[SQL Essential Training](https://www.linkedin.com/learning-login/share?account=2223545&forceAccount=false&redirect=https%3A%2F%2Fwww.linkedin.com%2Flearning%2Fsql-essential-training-20685933%3Ftrk%3Dshare_ent_url%26shareId%3D4SkW3fQ9RvCeSfu5oYNdPQ%253D%253D)** on LinkedIn Learning.
 
+Check Out my **[certificate of completion](https://www.linkedin.com/learning/certificates/a7dda580e349dc590bf2af6cfd8f98743cb56cf7b3ee8b81d96bc254b77ef0c1?trk=share_certificate)** on LinckedIn
+
 ---
 
 ### Practice Platforms
