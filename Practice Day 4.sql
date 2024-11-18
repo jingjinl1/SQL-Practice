@@ -195,4 +195,6 @@ WHERE
       DISTINCT li.TrackId
     FROM
       InvoiceLine AS li
-  );
+  )
+ORDER BY
+  t.Name;
