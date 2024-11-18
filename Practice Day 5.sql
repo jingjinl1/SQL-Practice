@@ -63,6 +63,60 @@ DELETE FROM
 WHERE
   ArtistId = 276 
  
+ 
+/*
+Exam question 12: How many customers' last name starts with G
+*/
+SELECT 
+  COUNT(c.LastName) AS 'Number of customers last name starts with G'
+FROM
+  Customer AS c
+WHERE
+  c.LastName LIKE "G%"
+  
+/*
+Exam question 13: which track appears at the top of the Track table when sorted in descending order?
+*/
+SELECT
+  t.Name
+FROM
+  Track AS t
+ORDER BY 
+  t.Name DESC
+LIMIT 1
+
+/*
+Exam question 14: how many tracks in the WSDA music database do not have a composer listed?
+*/
+SELECT
+  t.TrackId,
+  t.Composer
+FROM
+  Track AS t
+ORDER BY Composer DESC;
+
+SELECT 
+  COUNT(t.TrackId) AS "Number of tracks don't have a composer"
+FROM
+  Track AS t
+WHERE 
+  t.Composer = "unavailable";
+  
+/*
+Exam question 17: how many invoices were billed to the city of Brussels?
+*/
+SELECT
+  COUNT(i.InvoiceId) AS "Number of invoices billed at Brussels"
+FROM
+  Invoice AS i
+WHERE
+  i.BillingCity = "Brussels";
+  
+
+  
+  
+
+    
 
 
 
