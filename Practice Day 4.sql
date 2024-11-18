@@ -67,3 +67,132 @@ GROUP BY
   i.BillingCity
 ORDER BY 
   i.BillingCity;
+  
+  
+/*
+Description: Sub queries | Display all invoices that are below average
+*/
+SELECT
+  i.InvoiceId,
+  i.InvoiceDate,
+  i.BillingAddress,
+  i.BillingCity,
+  i.total
+FROM 
+  Invoice AS i
+WHERE
+  i.total < 
+    (SELECT AVG(i.total) FROM Invoice AS i)
+ORDER BY
+  i.total DESC;
+  
+  
+/*
+Sub queries within SELECT | display the average total for each city and have an extra 
+column to display the golabal average sale next to the city average for comparison
+*/
+SELECT
+  i.BillingCity,
+  ROUND(AVG(i.total),2) AS CityAverage,
+  (SELECT ROUND(AVG(total),2) FROM Invoice) AS GloableAverage
+FROM 
+  Invoice AS i
+GROUP BY
+  i.BillingCity
+ORDER BY
+  i.BillingCity;
+  
+  
+/*
+Sub queries without aggregate functions | Display all the invoices that has invoice date 
+after invoice id 251
+*/
+SELECT
+  i.InvoiceId,
+  i.InvoiceDate,
+  i.BillingAddress,
+  i.BillingCity,
+  i.total
+FROM 
+  Invoice AS i
+WHERE
+  i.InvoiceDate >
+  (SELECT 
+    i.InvoiceDate
+   FROM
+     Invoice AS i
+   WHERE 
+     i.InvoiceId = 251)
+ORDER BY
+  i.InvoiceDate
+  
+  
+/*
+Return multiple rows with subqueries | Find out all the invoices that are issued at the same time 
+with invoiceID 251,252,254
+*/
+SELECT
+  i.InvoiceId,
+  i.InvoiceDate,
+  i.BillingAddress,
+  i.BillingCity,
+  i.total
+FROM
+  Invoice AS i
+WHERE
+  i.InvoiceDate IN
+  (SELECT
+    i.InvoiceDate
+   FROM
+    Invoice AS i
+   WHERE
+    i.InvoiceId IN (251,252,254))
+ORDER BY
+  i.InvoiceDate;
+  
+  
+/*
+DISTINCTINCT | Find out what tracks are not selling
+*/
+SELECT
+  t.TrackId,
+  t.Name,
+  t.Composer,
+  t.GenreId,
+  t.UnitPrice
+FROM
+  Track AS t
+WHERE 
+  t.TrackId NOT IN
+  (
+   SELECT 
+     DISTINCT il.TrackId
+   FROM
+     InvoiceLine AS il
+  );
+	 
+/*
+Code Chllenge: Uncovering Unpopular Reacks
+Result: Return the track that have never been sold
+        4 Columns: Track ID, Track Name, Composer, Genre
+        Order by Track Name ASCE
+*/
+SELECT 
+  t.TrackId AS "Track ID",
+  t.Name AS "Track Name",
+  t.Composer,
+  g.Name AS Genre
+FROM 
+  Track AS t
+LEFT OUTER JOIN
+  Genre AS g
+ON
+  t.GenreId = g.GenreId
+WHERE
+  t.TrackId NOT IN
+  (
+    SELECT
+      DISTINCT li.TrackId
+    FROM
+      InvoiceLine AS li
+  );
