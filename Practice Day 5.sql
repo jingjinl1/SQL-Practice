@@ -43,4 +43,15 @@ INSERT INTO
   Artist(Name)
 VALUES('Test Insert')
 
+/*
+DML: UPDATE DATA | Change the name of the insterted Artist, remember to include where clause 
+to specify the line id, otherwise the database will be updated into the set value for every row
+*/
+UPDATE
+  Artist
+SET 
+  Name = 'Update Insert'
+WHERE 
+  ArtistId = 276
+
 
