@@ -55,6 +55,14 @@ WHERE
   ArtistId = 276
   
   
+/*
+DML: DELETE DATA | Delete the artist that was just created and modified
+*/
+DELETE FROM
+  Artist
+WHERE
+  ArtistId = 276 
+ 
 
 
 
