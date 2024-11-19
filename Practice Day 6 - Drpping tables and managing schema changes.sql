@@ -48,7 +48,7 @@ RENAME COLUMN Price TO UnitPrice;
 SELECT ProductName, UnitPrice, StockQuantity FROM Inventory;
 
 /*
-Code challenge | Change data types
+Code challenge | Modifying data structure
 Use alter to change the tata type stored in the StockQuantity column in the Inventory table from INTEGER TO BIGINT;
 Test the change
 */
@@ -83,3 +83,13 @@ ADD COLUMN PhoneNumber VARCHAR(15) NOT NULL;
 --Test
 SELECT CustomerID, FirstName, LastName, Email, JoinDate, PhoneNumber FROM Customers LIMIT 5;
 
+/*
+Code Challenge | Drop the table
+Drop the OldOrders table; Test result
+*/
+DROP TABLE OldOrders;
+
+--Test
+SELECT TABLE_NAME 
+FROM INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_NAME = 'OLDORDERS';
